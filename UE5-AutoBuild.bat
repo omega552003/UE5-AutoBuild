@@ -3,6 +3,7 @@ REM This is supposed to only download updates/missing files, but it just re-init
 git clone -b release https://github.com/EpicGames/UnrealEngine.git
 
 REM Run UE5's build scripts
+cd UnrealEngine
 call Setup.bat
 call GenerateProjectFiles.bat
 
