@@ -1,5 +1,7 @@
+@ECHO OFF
 REM This is supposed to only download updates/missing files, but it just re-initializes the project
-git pull origin https://github.com/EpicGames/UnrealEngine.git
+git remote add origin https://github.com/EpicGames/UnrealEngine.git
+git pull origin release
 
 REM Run UE5's build scripts
 call Setup.bat
