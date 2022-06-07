@@ -3,6 +3,7 @@
 REM This is supposed to identify if its updating or installing the engine.
 if exist UnrealEngine\ (
   ECHO "Unreal Engine found, updating."
+  cd UnrealEngine
   git remote add origin https://github.com/EpicGames/UnrealEngine.git
   git fetch
   git reset --hard HEAD
@@ -11,10 +12,10 @@ if exist UnrealEngine\ (
 ) else (
   ECHO "Unreal Engine not found, cloning."
   git clone -b release https://github.com/EpicGames/UnrealEngine.git
+  cd UnrealEngine
 )
 
 REM Run UE5's build scripts
-cd UnrealEngine
 call Setup.bat
 call GenerateProjectFiles.bat
 
