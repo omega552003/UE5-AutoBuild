@@ -1,6 +1,17 @@
 @ECHO OFF
-REM This is supposed to only download updates/missing files, but it just re-initializes the project
-git clone -b release https://github.com/EpicGames/UnrealEngine.git
+
+REM This is supposed to identify if its updating or installing the engine.
+if exist UnrealEngine\ (
+  ECHO "Unreal Engine found, updating."
+  git remote add origin https://github.com/EpicGames/UnrealEngine.git
+  git fetch
+  git reset --hard HEAD
+  git merge origin/release
+  git pull origin release
+) else (
+  ECHO "Unreal Engine not found, cloning."
+  git clone -b release https://github.com/EpicGames/UnrealEngine.git
+)
 
 REM Run UE5's build scripts
 cd UnrealEngine
