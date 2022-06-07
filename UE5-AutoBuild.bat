@@ -1,10 +1,6 @@
 @ECHO OFF
 REM This is supposed to only download updates/missing files, but it just re-initializes the project
-git remote add origin https://github.com/EpicGames/UnrealEngine.git
-git fetch
-git reset --hard HEAD
-git merge origin/release
-git pull origin release
+git clone -b release https://github.com/EpicGames/UnrealEngine.git
 
 REM Run UE5's build scripts
 call Setup.bat
