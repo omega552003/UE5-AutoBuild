@@ -26,7 +26,7 @@ CALL Setup.bat
 CALL GenerateProjectFiles.bat
 
 REM Finding location of MSbuild.exe
-FOR /F "delims=" %i IN ('"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -prerelease -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe') DO set VSInstallDir=%i
+FOR /F "delims=" %i IN ('"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -prerelease -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe') DO SET VSInstallDir=%i
 ECHO %VSInstallDir%
 
 REM Build project in VS commandline
