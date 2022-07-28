@@ -59,7 +59,7 @@ SET VSInstallDir="%%i"
 )
 
 REM This is supposed to identify if its updating or installing the engine.
-IF EXIST UnrealEngine\ ( 
+IF EXIST UnrealEngine\ (
 ECHO Unreal Engine found, updating.
 SET "UEStat=u"
 GOTO UEDir
@@ -83,7 +83,7 @@ GOTO UEDir
 )
 
 :update
-REM Frist Git command may not be needed
+REM First Git command may not be needed
 GIT remote add origin %UErepo%
 GIT fetch
 GIT reset --hard HEAD
