@@ -52,7 +52,7 @@ IF /i %go% EQU n ( GOTO:EOF ) ELSE ( IF /i %go% NEQ y ( GOTO input ) )
 CLS                                                                                
 SET UErepo="https://github.com/EpicGames/UnrealEngine.git"
 
-REM Prereqs
+REM Prereqs https://stackoverflow.com/questions/14691494/check-if-command-was-successful-in-a-batch-file
 REM Finding location of MSbuild.exe
 FOR /F "delims=" %%i IN ('"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -prerelease -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe') DO (
 SET VSInstallDir="%%i"
